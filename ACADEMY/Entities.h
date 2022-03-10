@@ -15,7 +15,7 @@ struct Teacher
 struct Group {
 	char* title;
 	char* occupation;
-	Teacher** teachers;
+	Teacher* teacher;
 	int student_count;
 	Student** students;
 };
@@ -26,5 +26,7 @@ struct Academy
 {
 	char* directorname;
 	Group** groups;
+	int group_count;
 	Teacher** teachers;
+	int teacher_count;
 };
