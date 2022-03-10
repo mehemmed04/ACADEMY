@@ -16,7 +16,7 @@ Teacher* GetNewTeacher() {
 	cin.getline(occupation, 100);
 
 	auto teacher = new Teacher{ fullname,occupation };
-	return teacher;
+	return teacher; 
 }
 
 void AddTeacher(Academy* academy, Teacher** teachers) {
