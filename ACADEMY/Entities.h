@@ -24,6 +24,7 @@ struct Group {
 
 struct Academy
 {
+	int student_count;
 	char* directorname;
 	Group** groups;
 	int group_count;
