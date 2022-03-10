@@ -30,7 +30,7 @@ void AddTeacher(Academy* academy, Teacher** teachers) {
 	}
 	newteachers[count] = teacher; 
 	teachers = newteachers;
-	newteachers = nullptr;
+	newteachers = nullptr;  
 	academy->teacher_count++;
 }
 
