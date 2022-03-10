@@ -11,7 +11,7 @@ Teacher* GetNewTeacher() {
 	char* fullname = new char[100]{};
 	cin.getline(fullname, 100);
 
-	cout << "Enter Teacher occupation : ";
+	cout << "Enter Teacher occupation : "; 
 	char* occupation = new char[100]{};
 	cin.getline(occupation, 100);
 
