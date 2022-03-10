@@ -24,7 +24,8 @@ struct Group {
 
 struct Academy
 {
-	char* directorname;
+	int student_count;
+	char* directorname = new char[] {"Edalet Allahverdiyev"};
 	Group** groups;
 	int group_count;
 	Teacher** teachers;
