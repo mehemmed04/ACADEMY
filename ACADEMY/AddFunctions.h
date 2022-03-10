@@ -28,7 +28,7 @@ void AddTeacher(Academy* academy, Teacher** teachers) {
 	{
 		newteachers[i] = teachers[i];
 	}
-	newteachers[count] = teacher;
+	newteachers[count] = teacher; 
 	teachers = newteachers;
 	newteachers = nullptr;
 	academy->teacher_count++;
