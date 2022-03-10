@@ -20,7 +20,7 @@ Teacher* GetNewTeacher() {
 }
 
 void AddTeacher(Academy* academy, Teacher** teachers) {
-	auto teacher = GetNewTeacher();
+	auto teacher = GetNewTeacher(); 
 	int count = academy->teacher_count;
 	auto newteachers = new Teacher * [count + 1];
 
