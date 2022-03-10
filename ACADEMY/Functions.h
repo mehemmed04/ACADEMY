@@ -4,10 +4,10 @@
 using namespace std;
 
 void ShowMenu() {
-	cout << "ShowAllTeachers   1" << endl;
-	cout << "Create Group      2" << endl;
-	cout << "Show Groups       3" << endl;
-	cout << "Add Teacher       4" << endl;
+	cout << "ShowAllTeachers     1" << endl;
+	cout << "Create Group        2" << endl;
+	cout << "Show Groups         3" << endl;
+	cout << "Add Teacher         4" << endl;
 }
 
 void ShowTeacher(Teacher*teacher) {
@@ -16,27 +16,44 @@ void ShowTeacher(Teacher*teacher) {
 	cout << "======================================" << endl;
 }
 
-void ShowAllTeachers(Academy* academy,Teacher** teachers) {
+void ShowStudent(Student* student) {
+	cout << "student's name : " << student->fullname << endl;
+	cout << "student's age : " << student->age << endl;
+	cout << "======================================" << endl;
+}
+
+void ShowAllStudents(Group* group) {
+	int l = group->student_count;
+	for (size_t i = 0; i < l; i++)
+	{
+		ShowStudent(group->students[i]);
+	}
+}
+
+void ShowAllTeachers(Academy* academy) {
 	int l = academy->teacher_count;
 	for (size_t i = 0; i<l ; i++)
 	{
-		ShowTeacher(teachers[i]);
+		ShowTeacher(academy->teachers[i]);
 	}
 }
 
 void ShowGroup(Group* group) {
 	cout << "Group Title : " << group->title << endl;
-	cout << "Group's Teacher : " << group->teacher << endl;
-	cout << "Group Occupation" << group->occupation << endl;
-	cout << "Group's students : " << group->students << endl;
-	cout << "Group student count" << group->student_count << endl;
+	cout << "Group's Teacher : "<< endl; 
+	ShowTeacher(group->teacher);
+	cout << "Group Occupation : " << group->occupation << endl;
+	cout << "Group's students : "<< endl;
+	ShowAllStudents(group);
+	cout << "Group student count : " << group->student_count << endl;
 	cout << "======================================" << endl;
 }
 
-void ShowAllGroups(Academy* academy, Group**groups) {
+void ShowAllGroups(Academy* academy) {
 	int l = academy->group_count;
 	for (size_t i = 0; i < l; i++)
 	{
-		ShowGroup(groups[i]);
+		ShowGroup(academy->groups[i]);
+	cout << "\n\n";
 	}
 }

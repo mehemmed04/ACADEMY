@@ -32,7 +32,7 @@ Student* SelectStudentForGroup(Academy* academy, Student** students) {
 
 }
 
-Group* GetNewGroup(Academy* academy, Teacher** teacher,Student ** students) {
+Group* GetNewGroup(Academy* academy,Student** students) {
 	cin.ignore();
 	cin.clear();
 	char* groupTitle = new char[100] {};
@@ -43,7 +43,7 @@ Group* GetNewGroup(Academy* academy, Teacher** teacher,Student ** students) {
 	cout << "Enter Group occupation : ";
 	cin.getline(occupation,100);
 
-	auto newTeacher = SelectTeacherForGroup(academy, teacher);
+	auto newTeacher = SelectTeacherForGroup(academy, academy->teachers);
 
 	int student_count = 0;
 	cout << "Enter student count : ";
@@ -66,6 +66,8 @@ void CreateGroup(Academy* academy,Student ** students) {
 	{
 		newgroups[i] = academy->groups[i];
 	}
-	newgroups[l] = GetNewGroup(academy,academy->teachers,students);
-
+	newgroups[l] = GetNewGroup(academy,students);
+	academy->groups = newgroups;
+	newgroups = nullptr;
+	academy->group_count++;
 }

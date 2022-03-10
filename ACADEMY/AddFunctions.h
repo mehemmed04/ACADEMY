@@ -19,17 +19,17 @@ Teacher* GetNewTeacher() {
 	return teacher; 
 }
 
-void AddTeacher(Academy* academy, Teacher** teachers) {
+void AddTeacher(Academy* academy) {
 	auto teacher = GetNewTeacher(); 
 	int count = academy->teacher_count;
 	auto newteachers = new Teacher * [count + 1];
 
 	for (size_t i = 0; i < count; i++)
 	{
-		newteachers[i] = teachers[i];
+		newteachers[i] = academy->teachers[i];
 	}
 	newteachers[count] = teacher; 
-	teachers = newteachers;
+	academy->teachers = newteachers;
 	newteachers = nullptr;  
 	academy->teacher_count++;
 }
